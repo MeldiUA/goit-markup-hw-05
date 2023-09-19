@@ -578,6 +578,7 @@ address {
   border-radius: 4px;
   background: #4d5ae5;
   margin-left: 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-subscribe-btn-icon {
@@ -641,13 +642,13 @@ address {
   width: 24px;
   height: 24px;
   list-style: 0;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 24px;
 }
 
 .close-btn-icon {
   fill: #2e2f42;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover {
