@@ -534,6 +534,11 @@ address {
 
 /* <========FOOTER SUBSCRIBE================> */
 
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
 .subscribe-footer-text {
   color: #fff;
   font-size: 16px;
@@ -546,14 +551,16 @@ address {
 .footer-subscribe-input {
   width: 264px;
   height: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   padding-right: 16px;
   padding-left: 16px;
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   color: #fff;
-  margin-right: 0;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -571,9 +578,11 @@ address {
 }
 
 .footer-subscribe-btn {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 165px;
+  height: 40px;
   padding: 8px 24px;
   color: #fff;
   text-align: center;
@@ -583,7 +592,8 @@ address {
   letter-spacing: 0.04em;
   border-radius: 4px;
   background: #4d5ae5;
-  margin-left: 24px;
+  cursor: pointer;
+  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -631,24 +641,33 @@ address {
   transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* <===========CLOSE BTN =================> */
 
 .close-btn {
-  margin-left: auto;
+  position: absolute;
+  top: 24px;
+  right: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #e7e9fc;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
   width: 24px;
   height: 24px;
   list-style: 0;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 24px;
 }
 
@@ -657,12 +676,17 @@ address {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-btn:hover {
+.close-btn:hover,
+.close-btn:focus {
   background-color: #404bbf;
-  border: 0;
+  border: none;
 }
 
 .close-btn:hover .close-btn-icon {
+  fill: #ffffff;
+}
+
+.close-btn:focus .close-btn-icon {
   fill: #ffffff;
 }
 /* <=========== /CLOSE BTN =================> */
@@ -685,14 +709,17 @@ address {
   color: #8e8f99;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.16; /* 116.667% */
+  line-height: 1.17; /* 116.667% */
   letter-spacing: 0.04em;
   margin-bottom: 4px;
 }
 
+.review-form-field-wrapper {
+  margin-bottom: 8px;
+}
+
 .review-form-input-wrapper {
   position: relative;
-  margin-bottom: 8px;
 }
 
 .review-form-input {
@@ -701,6 +728,8 @@ address {
   border-radius: 4px;
   padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -730,9 +759,11 @@ address {
   padding-left: 16px;
   padding-right: 16px;
   color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.16; /* 116.667% */
+  line-height: 1.17; /* 116.667% */
   letter-spacing: 0.04em;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -763,7 +794,7 @@ address {
   color: #8e8f99;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.16; /* 116.667% */
+  line-height: 1.17; /* 116.667% */
   letter-spacing: 0.04em;
 }
 
@@ -791,8 +822,8 @@ address {
   margin-right: 8px;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-form-checkbox:focus
@@ -807,7 +838,7 @@ address {
   > .review-form-custom-checkbox {
   background-color: #404bbf;
   fill: #f4f4fd;
-  border-color: #404bbf;
+  border: none;
 }
 
 /* <=========== /REVIEW CHECKBOX =================> */
@@ -827,7 +858,7 @@ address {
   letter-spacing: 0.04em;
   padding: 16px 32px;
   cursor: pointer;
-
+  border: none;
   border-radius: 4px;
   background: #4d5ae5;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
